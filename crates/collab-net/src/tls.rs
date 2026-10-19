@@ -18,7 +18,7 @@ use rustls::pki_types::{CertificateDer, ServerName};
 use rustls::{CertificateError, ClientConfig, ClientConnection, RootCertStore};
 
 /// The variable naming a PEM file of extra certificate authorities to trust.
-pub const CA_FILE: &str = "FIGCRAFT_CA_FILE";
+pub const CA_FILE: &str = "BILLO FRAME_CA_FILE";
 
 /// One connection's TLS session, shared by its reader and writer.
 pub type Tls = Arc<Mutex<ClientConnection>>;

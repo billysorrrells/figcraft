@@ -805,7 +805,7 @@ pub fn scan_system_fonts() {
 /// `FIGCRAFT_NO_SYSTEM_FONTS` is set (and not `0`): renders use only the embedded fonts.
 #[cfg(not(target_arch = "wasm32"))]
 fn system_fonts_opted_out() -> bool {
-    std::env::var_os("FIGCRAFT_NO_SYSTEM_FONTS").is_some_and(|v| !v.is_empty() && v != "0")
+    std::env::var_os("BILLO FRAME_NO_SYSTEM_FONTS").is_some_and(|v| !v.is_empty() && v != "0")
 }
 
 /// Index the system fonts the first time the font database is used (headless apps: a run that

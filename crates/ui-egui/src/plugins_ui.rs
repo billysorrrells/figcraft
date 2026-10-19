@@ -452,7 +452,7 @@ fn confirm_window(app: &mut FigApp, ctx: &Context, t: &Tokens) {
         ui.add_space(8.0);
         widgets::label(
             ui,
-            tr("Plugins run in FigCraft's sandbox, without files, network or clock. Install only plugins you trust."),
+            tr("Plugins run in Billo Frame's sandbox, without files, network or clock. Install only plugins you trust."),
             t.text_secondary,
         );
         ui.add_space(4.0);

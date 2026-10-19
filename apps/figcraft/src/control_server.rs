@@ -31,11 +31,11 @@ pub fn start(port: u16, queue: Queue, ctx: CtxSlot) {
         Ok(l) => l,
         Err(e) => {
             log::error!("control server: can't bind 127.0.0.1:{port}: {e} (another app may own it; pick another port)");
-            eprintln!("FigCraft control server failed to bind port {port}: {e}");
+            eprintln!("Billo Frame control server failed to bind port {port}: {e}");
             return;
         }
     };
-    eprintln!("FigCraft control server listening on 127.0.0.1:{port}");
+    eprintln!("Billo Frame control server listening on 127.0.0.1:{port}");
     let spawned = std::thread::Builder::new().name("figcraft-control".into()).spawn(move || {
         let mut workers = Vec::new();
         for stream in listener.incoming().flatten() {

@@ -168,14 +168,14 @@ impl Backend for Attached {
         let line = json!({"id": id, "method": method, "params": params}).to_string();
         if self.conn.is_none() || self.stale() {
             self.reconnect().map_err(|e| {
-                format!("FigCraft app at {} is not reachable: {e} (request was not sent; start it with `figcraft --control PORT`)", self.addr)
+                format!("Billo Frame app at {} is not reachable: {e} (request was not sent; start it with `figcraft --control PORT`)", self.addr)
             })?;
         }
         // A lost reply does not mean the app failed to apply the request.
         let reply = self.roundtrip(&line).map_err(|e| {
             self.conn = None;
             format!(
-                "FigCraft control call `{method}` at {} failed: {e}; the operation may have completed. Inspect the document before retrying.",
+                "Billo Frame control call `{method}` at {} failed: {e}; the operation may have completed. Inspect the document before retrying.",
                 self.addr
             )
         })?;
@@ -192,6 +192,6 @@ impl Backend for Attached {
     }
 
     fn describe(&self) -> String {
-        format!("attached to the FigCraft app at {}", self.addr)
+        format!("attached to the Billo Frame app at {}", self.addr)
     }
 }

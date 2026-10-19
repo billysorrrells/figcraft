@@ -9,9 +9,9 @@ fn main() {
         if std::path::Path::new(ico).exists() {
             res.set_icon(ico);
         }
-        res.set("ProductName", "FigCraft");
-        res.set("FileDescription", "FigCraft");
-        res.set("CompanyName", "ArtCraft");
+        res.set("ProductName", "Billo Frame");
+        res.set("FileDescription", "Billo Frame");
+        res.set("CompanyName", "BilloTech");
         if let Err(e) = res.compile() {
             println!("cargo::warning=winresource: {e}");
         }
@@ -20,7 +20,7 @@ fn main() {
         let msvc = std::env::var("CARGO_CFG_TARGET_ENV").as_deref() == Ok("msvc");
         println!("cargo::rustc-link-arg-bins={}", if msvc { "/STACK:8388608" } else { "-Wl,--stack,8388608" });
     }
-    let sha = std::env::var("FIGCRAFT_BUILD_SHA").unwrap_or_default();
-    println!("cargo::rustc-env=FIGCRAFT_BUILD_SHA={sha}");
-    println!("cargo::rerun-if-env-changed=FIGCRAFT_BUILD_SHA");
+    let sha = std::env::var("BILLO FRAME_BUILD_SHA").unwrap_or_default();
+    println!("cargo::rustc-env=BILLO FRAME_BUILD_SHA={sha}");
+    println!("cargo::rerun-if-env-changed=BILLO FRAME_BUILD_SHA");
 }

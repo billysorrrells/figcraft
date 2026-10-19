@@ -8,7 +8,7 @@ use std::path::PathBuf;
 fn main() {
     println!("cargo::rerun-if-env-changed=CRAFT_FONTS_DIR");
     println!("cargo::rerun-if-env-changed=CRAFT_FONTS_REQUIRED");
-    println!("cargo::rerun-if-env-changed=FIGCRAFT_EMBED_CJK");
+    println!("cargo::rerun-if-env-changed=BILLO FRAME_EMBED_CJK");
     let mut src = String::from("pub static CRAFT_FONTS: &[CraftFont] = &[\n");
     if let Some(dir) = std::env::var_os("CRAFT_FONTS_DIR").map(PathBuf::from) {
         let mut ok = false;
@@ -48,7 +48,7 @@ fn craft_fonts(dir: &std::path::Path, manifest_rel: &str) -> Result<String, Stri
         };
         // CJK fonts are large; the desktop app finds system CJK fonts instead unless asked.
         let cjk = scripts.contains("Hans");
-        if cjk && std::env::var_os("FIGCRAFT_EMBED_CJK").is_none() {
+        if cjk && std::env::var_os("BILLO FRAME_EMBED_CJK").is_none() {
             continue;
         }
         // Web builds have a size budget: Inter, plus Noto Sans CJK (every CJK script, for CJK UI

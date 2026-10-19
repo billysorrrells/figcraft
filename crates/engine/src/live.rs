@@ -65,7 +65,7 @@ use crate::{DocState, EngineError, Result, Session, TextEdit, ViewState, bad, sp
 /// A build can ship another one, or none: set `FIGCRAFT_DEFAULT_SERVER` when compiling to a
 /// server's address (`wss://host/`), or to nothing (`FIGCRAFT_DEFAULT_SERVER=`) for a build whose
 /// online sharing stays off until the user enters a server in Preferences.
-pub const DEFAULT_SERVER: &str = match option_env!("FIGCRAFT_DEFAULT_SERVER") {
+pub const DEFAULT_SERVER: &str = match option_env!("BILLO FRAME_DEFAULT_SERVER") {
     Some(server) => server,
     None => "wss://collab.craftapps.dev/",
 };
@@ -1812,7 +1812,7 @@ fn report(s: &mut Session, p: &Value) -> Result<Value> {
     }
     let live = s.live();
     if live.status != Status::Live || live.role() != Some(Role::Guest) {
-        return Err(bad(CMD, "join a file on a FigCraft server first: reports go to that server's operator"));
+        return Err(bad(CMD, "join a file on a Billo Frame server first: reports go to that server's operator"));
     }
     if live.hosting.is_none() {
         return Err(bad(CMD, "this server doesn't take reports (it is older than this app); contact its operator another way"));
